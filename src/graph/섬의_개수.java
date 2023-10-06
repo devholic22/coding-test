@@ -93,7 +93,7 @@ public class 섬의_개수 {
         for (int direction = 0; direction < DIRECTION; direction++) {
             int ny = y + DY[direction];
             int nx = x + DX[direction];
-            if (!isValidLocation(ny, nx) || visited[ny][nx] && !isLand(ny, nx)) {
+            if (!isValidLocation(ny, nx) || visited[ny][nx] || !isLand(ny, nx)) {
                 continue;
             }
             dfs(ny, nx);
