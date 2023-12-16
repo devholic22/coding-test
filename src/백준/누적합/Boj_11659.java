@@ -11,6 +11,7 @@ public class Boj_11659 {
 
     /*
     SOLVED: 23.12.15 (금)
+    구간 합 구하기 4 - 실버3
      */
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
