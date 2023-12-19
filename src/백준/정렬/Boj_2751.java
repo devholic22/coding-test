@@ -17,7 +17,7 @@ public class Boj_2751 {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        // N: 1 <= N <= 1,000,000 (즉, O(NlogN 까지만 가능))
+        // N: 1 <= N <= 1,000,000 (즉, O(NlogN) 까지만 가능)
         int N = Integer.parseInt(reader.readLine());
         int[] numbers = new int[N];
 
