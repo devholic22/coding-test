@@ -9,6 +9,10 @@ import java.util.PriorityQueue;
 
 public class Boj_1715 {
 
+    /*
+    SOLVED: 23.12.21 (목)
+    카드 정렬하기 - 골드4
+     */
     public static void main(String[] args) throws IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
