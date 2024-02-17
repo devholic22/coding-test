@@ -1,36 +1,32 @@
-package 백준.정렬;
+package 백준.dp;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
 
-public class Boj_2751 {
+public class Boj_1309_동물원 {
 
     /*
-    SOLVED: 23.12.19 (화)
-    수 정렬하기2 - 실버5
+    Solved: 24.02.17 (토)
+    동물원 - 실버1
+    - ✅ 점화식을 떠올렸다.
+    - ❌ 부분적으로만 왜 그런지 알았다. (전부 고르지 않을 경우 1, 1개를 고를 경우 2 x n, n개를 고를 경우 2)
      */
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        // N: 1 <= N <= 1,000,000 (즉, O(NlogN) 까지만 가능)
         int N = Integer.parseInt(reader.readLine());
-        int[] numbers = new int[N];
-
-        for (int i = 0; i < N; i++) {
-            numbers[i] = Integer.parseInt(reader.readLine());
+        int[] dp = new int[100_000 + 1];
+        dp[1] = 3;
+        dp[2] = 7;
+        for (int i = 3; i <= N; i++) {
+            dp[i] = (2 * dp[i - 1] + dp[i - 2]) % 9901;
         }
 
-        Arrays.sort(numbers); // 오름차순 정렬
-
-        for (int number : numbers) {
-            writer.write(number + "\n");
-        }
-
+        writer.write(dp[N] + "");
         writer.close();
         reader.close();
     }
